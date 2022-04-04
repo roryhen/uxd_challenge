@@ -1,1 +1,149 @@
-// Add your styles below! (feel free to delete this comment)
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  margin: 3rem;
+  font-size: 1.6rem;
+  background-color: #efefef;
+}
+
+.meeting-card {
+  $radius: 0.6rem;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+
+  border-radius: $radius;
+  border: 0.1rem solid #e0e7f1;
+  background-color: #fff;
+
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #526275;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &::before {
+    content: "";
+    width: 0.4rem;
+    height: 100%;
+    border-radius: $radius 0 0 $radius;
+    // Default bg color, no status
+    background: transparent;
+
+    @media (max-width: 375px) {
+      grid-area: span 2 / 1;
+    }
+  }
+
+  // Colors for different statuses
+  &--info::before {
+    background: #233a85;
+  }
+
+  &--success::before {
+    background: #23856d;
+  }
+
+  &--warning::before {
+    background: #bd9a26;
+  }
+
+  &--danger::before {
+    background: #852323;
+  }
+
+  &__organizer {
+    margin: 0;
+    padding: 1.8rem;
+    align-self: flex-start;
+    img {
+      border-radius: 50%;
+      box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.18);
+    }
+
+    @media (max-width: 375px) {
+      grid-area: 1 / 2;
+    }
+  }
+
+  &__details {
+    padding: 1.8rem 0;
+    overflow: hidden;
+
+    @media (max-width: 375px) {
+      padding: 0 1rem 1.8rem 1.8rem;
+      grid-row: 2;
+      grid-column: 2 / span 2;
+    }
+  }
+
+  &__title {
+    margin: 0 0 1.2rem 0;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #263240;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__metadata {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 0.4rem;
+  }
+
+  &__metadata > * {
+    margin: 0 2.4rem 1.2rem 0;
+    &:nth-last-child(2) {
+      margin: 0 0 1.2rem;
+    }
+    &:last-child {
+      flex: 100%;
+      margin: 0;
+    }
+  }
+
+  &__metadata time,
+  &__location {
+    display: inline-grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem;
+  }
+
+  &__location > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__location a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+  &__start-time {
+    white-space: nowrap;
+  }
+
+  &__action {
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    padding: 2.4rem;
+
+    @media (max-width: 375px) {
+      place-self: start end;
+    }
+  }
+}

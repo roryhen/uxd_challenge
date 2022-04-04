@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <title>Kajabi UXD Challenge Solution</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <!-- Add your mark for the component here (feel free to delete this comment) -->
+    <article class="meeting-card meeting-card--success">
+      <figure class="meeting-card__organizer">
+        <img
+          width="80"
+          height="80"
+          srcset="
+            /assets/avatar-naomi.png     80w,
+            /assets/avatar-naomi@2x.png 160w
+          "
+          sizes="(min-width: 480px) 160px, 80px"
+          src="/assets/avatar-naomi@2x.png"
+          alt="Sharply dressed portrait of a lady"
+        />
+      </figure>
+      <div class="meeting-card__details">
+        <h3 class="meeting-card__title">Free Consultation w/ Naomi</h3>
+        <div class="meeting-card__metadata">
+          <time class="meeting-card__length" datetime="00:15">
+            <img
+              class="icon"
+              width="16"
+              height="16"
+              src="/assets/icon-clock.svg"
+              alt=""
+            />
+            <span>15 Mins</span>
+          </time>
+          <time class="meeting-card__date" datetime="2021-02-20T08:17:00.000Z">
+            <img
+              class="icon"
+              width="16"
+              height="16"
+              src="/assets/icon-calendar-alt.svg"
+              alt=""
+            />
+            <span
+              >Feb 20, 2021
+              <span class="meeting-card__start-time"
+                >&centerdot; 5:00pm PST</span
+              ></span
+            >
+          </time>
+          <div class="meeting-card__location">
+            <img
+              class="icon"
+              width="16"
+              height="16"
+              src="/assets/icon-map-pin.svg"
+              alt=""
+            />
+            <span>
+              <a href="https://kajabi.zoom.us/tbd" rel="noreferer noopener"
+                >kajabi.zoom.us/tbd</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class="meeting-card__action">
+        <img
+          class="icon"
+          src="/assets/icon-options.svg"
+          width="16"
+          height="16"
+          alt="Perform an action"
+        />
+      </button>
+    </article>
   </body>
 </html>
